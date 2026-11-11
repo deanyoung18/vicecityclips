@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finishing TikTok sign-in</title>
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="wrap">
+<header><span class="logo">VC</span><a href="../../">ViceCityClips Scheduler</a></header>
+<h1>Finishing TikTok sign-in…</h1>
+<p>Sending you back to ViceCityClips Scheduler on your computer. If nothing happens, <a id="go" href="#">click here</a>. The scheduler must be running on this computer.</p>
+</div>
+<script>
+// TikTok sends the sign-in result here (a permanent https address). The scheduler runs only on the
+// creator's own computer, so pass the result straight on to it. Nothing is stored on this website.
+(function () {
+  var target = "http://localhost:8787/oauth/tiktok/callback" + window.location.search;
+  document.getElementById("go").href = target;
+  window.location.replace(target);
+})();
+</script>
+</body>
+</html>
